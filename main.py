@@ -17,14 +17,18 @@ app = FastAPI(
 
 
 # ========== 3. CONFIGURATION CORS ==========
+# ========== CORS MIS À JOUR ==========
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://academicrec.vercel.app"],
+    allow_origins=[
+        "https://academicrec.vercel.app",
+        "http://localhost:5173",
+        "http://localhost:3000",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 # ========== 4. VARIABLES GLOBALES ==========
 model = None
